@@ -1,4 +1,5 @@
 
+
 import os
 import shutil
 import hashlib
@@ -22,6 +23,9 @@ from pptx import Presentation
 # ==========================================
 
 load_dotenv(override=True)
+
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
 
 VECTORSTORE_PATH = "./vectorstore"
 DOCUMENT_PATH = "./documents"
